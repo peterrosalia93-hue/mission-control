@@ -157,37 +157,45 @@ export async function getOfficeData(): Promise<OfficeData> {
 }
 
 export async function getProjects(): Promise<ProjectRecord[]> {
-  const projectsPath = path.join(workspaceRoot, "memory", "projects.json");
-  const raw = await readJsonFile<{ projects: ProjectRecord[] }>(projectsPath);
-  return raw.projects;
+  try {
+    const projectsPath = path.join(workspaceRoot, "memory", "projects.json");
+    const raw = await readJsonFile<{ projects: ProjectRecord[] }>(projectsPath);
+    return raw.projects;
+  } catch {
+    return [];
+  }
 }
 
 export async function getDailyMemory(): Promise<MemoryDay[]> {
-  const memoryRoot = path.join(workspaceRoot, "memory");
-  const entries = await fs.readdir(memoryRoot, { withFileTypes: true });
-  const dailyFiles = entries
-    .filter((entry) => entry.isFile() && /^\d{4}-\d{2}-\d{2}\.md$/.test(entry.name))
-    .map((entry) => entry.name)
-    .sort((a, b) => b.localeCompare(a));
+  try {
+    const memoryRoot = path.join(workspaceRoot, "memory");
+    const entries = await fs.readdir(memoryRoot, { withFileTypes: true });
+    const dailyFiles = entries
+      .filter((entry) => entry.isFile() && /^\d{4}-\d{2}-\d{2}\.md$/.test(entry.name))
+      .map((entry) => entry.name)
+      .sort((a, b) => b.localeCompare(a));
 
-  const days = await Promise.all(
-    dailyFiles.map(async (fileName) => {
-      const content = await readText(path.join(memoryRoot, fileName));
-      const lines = content
-        .split(/\r?\n/)
-        .map((line) => line.trim())
-        .filter((line) => line.startsWith("- "));
+    const days = await Promise.all(
+      dailyFiles.map(async (fileName) => {
+        const content = await readText(path.join(memoryRoot, fileName));
+        const lines = content
+          .split(/\r?\n/)
+          .map((line) => line.trim())
+          .filter((line) => line.startsWith("- "));
 
-      return {
-        fileName,
-        date: fileName.replace(/\.md$/, ""),
-        content,
-        summaryLines: lines.slice(0, 8),
-      } satisfies MemoryDay;
-    })
-  );
+        return {
+          fileName,
+          date: fileName.replace(/\.md$/, ""),
+          content,
+          summaryLines: lines.slice(0, 8),
+        } satisfies MemoryDay;
+      })
+    );
 
-  return days;
+    return days;
+  } catch {
+    return [];
+  }
 }
 
 export async function getLongTermMemory(): Promise<string> {
@@ -195,8 +203,12 @@ export async function getLongTermMemory(): Promise<string> {
 }
 
 export async function getDocs(): Promise<DocRecord[]> {
-  const docs = await walkMarkdownFiles(workspaceRoot);
-  return docs.sort((a, b) => a.path.localeCompare(b.path));
+  try {
+    const docs = await walkMarkdownFiles(workspaceRoot);
+    return docs.sort((a, b) => a.path.localeCompare(b.path));
+  } catch {
+    return [];
+  }
 }
 
 export async function getWorkspaceSnapshot() {
