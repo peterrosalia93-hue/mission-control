@@ -1,0 +1,47 @@
+{
+  "rooms": [
+    {
+      "id": "central-ops",
+      "name": "Central Ops",
+      "theme": "night"
+    }
+  ],
+  "agents": [
+    {
+      "id": "openclaw-main",
+      "name": "Mwakulomba",
+      "x": 2,
+      "y": 1,
+      "status": "working",
+      "activity": "Planning Mission Control and monitoring active builds",
+      "desk": "Operator Desk"
+    },
+    {
+      "id": "strategy-council",
+      "name": "R&D Council",
+      "x": 6,
+      "y": 1,
+      "status": "thinking",
+      "activity": "Reviewing flagship bets and revenue loops",
+      "desk": "Strategy Table"
+    },
+    {
+      "id": "builder-01",
+      "name": "Builder Agent",
+      "x": 2,
+      "y": 4,
+      "status": "idle",
+      "activity": "Waiting for a clean implementation brief",
+      "desk": "Desk A"
+    },
+    {
+      "id": "memory-keeper",
+      "name": "Memory Keeper",
+      "x": 6,
+      "y": 4,
+      "status": "archiving",
+      "activity": "Indexing memory by day and project",
+      "desk": "Archive Desk"
+    }
+  ]
+}

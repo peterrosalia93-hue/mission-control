@@ -1,0 +1,33 @@
+{
+  "source": "seed",
+  "notes": "This screen is ready for future live OpenClaw cron integration. For now it uses a local data source so the UI and structure are in place.",
+  "jobs": [
+    {
+      "id": "cron-morning-operator",
+      "name": "Morning Operator Review",
+      "schedule": "At first morning heartbeat",
+      "target": "main-agent",
+      "status": "active",
+      "purpose": "Review goals, recent memory, and complete one high-leverage task.",
+      "lastRun": "2026-03-28 04:50 EAT"
+    },
+    {
+      "id": "cron-memory-curation",
+      "name": "Memory Curation",
+      "schedule": "Every 3 days",
+      "target": "main-agent",
+      "status": "planned",
+      "purpose": "Review recent daily logs and distill durable insights into long-term memory.",
+      "lastRun": "Not yet"
+    },
+    {
+      "id": "cron-rd-council",
+      "name": "R&D Council Review",
+      "schedule": "Weekly",
+      "target": "strategy-council",
+      "status": "planned",
+      "purpose": "Generate multi-model memos and next actions for active projects.",
+      "lastRun": "Not yet"
+    }
+  ]
+}

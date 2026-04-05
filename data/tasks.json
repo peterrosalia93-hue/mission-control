@@ -1,0 +1,73 @@
+{
+  "boardName": "Unified Mission Control Task Board",
+  "heartbeatRule": "On heartbeat, check this task board for any backlog or assigned tasks where assignee is 'openclaw-main', 'Mwakulomba', or 'Mwanyama' and priority is not done.",
+  "columns": ["backlog", "assigned", "in_progress", "review", "done"],
+  "tasks": [
+    {
+      "id": "MC-001",
+      "title": "Ship unified Mission Control dashboard MVP",
+      "description": "Merge Mission Control and Command Post into one localhost dashboard with strategic and operational layers.",
+      "status": "done",
+      "priority": "high",
+      "assignee": "Mwanyama",
+      "project": "Mission Control",
+      "tags": ["dashboard", "nextjs", "ops", "merge"],
+      "dueDate": "2026-03-30"
+    },
+    {
+      "id": "HOU-014",
+      "title": "Turn Housify into investor-testable MVP",
+      "description": "Close auth roles, listing persistence, inquiry reliability, and trust layer gaps.",
+      "status": "backlog",
+      "priority": "high",
+      "assignee": "openclaw-main",
+      "project": "Housify",
+      "tags": ["housing", "mvp", "trust"],
+      "dueDate": "2026-03-31"
+    },
+    {
+      "id": "OPS-002",
+      "title": "Design heartbeat-to-task-board workflow",
+      "description": "Make heartbeats automatically check task assignments from Mission Control data.",
+      "status": "assigned",
+      "priority": "medium",
+      "assignee": "Mwakulomba",
+      "project": "Mission Control",
+      "tags": ["heartbeat", "automation"],
+      "dueDate": "2026-03-29"
+    },
+    {
+      "id": "DOC-003",
+      "title": "Categorize prior workspace planning documents",
+      "description": "Improve discoverability of specs, plans, and operating docs in Mission Control.",
+      "status": "backlog",
+      "priority": "medium",
+      "assignee": "openclaw-main",
+      "project": "Knowledge Base",
+      "tags": ["docs", "search", "knowledge"],
+      "dueDate": "2026-03-30"
+    },
+    {
+      "id": "ORG-001",
+      "title": "Shape autonomous AI org blueprint",
+      "description": "Define team roles, economic loops, and work allocation for a 24/7 AI organization.",
+      "status": "assigned",
+      "priority": "high",
+      "assignee": "Strategy-Council",
+      "project": "AI Organization",
+      "tags": ["agents", "strategy", "org"],
+      "dueDate": "2026-04-02"
+    },
+    {
+      "id": "MEM-007",
+      "title": "Keep daily memory logs current",
+      "description": "Append meaningful progress into daily memory and preserve durable decisions in long-term memory.",
+      "status": "review",
+      "priority": "medium",
+      "assignee": "Mwakulomba",
+      "project": "Memory System",
+      "tags": ["memory", "ops"],
+      "dueDate": "2026-03-28"
+    }
+  ]
+}

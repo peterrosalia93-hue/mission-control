@@ -1,0 +1,43 @@
+{
+  "missionStatement": "Build an autonomous organization of AI agents that produces useful work and value for Osho 24/7 without losing strategic focus, trust, or human oversight.",
+  "principles": [
+    "One flagship build at a time",
+    "Human approval for external or sensitive actions",
+    "Agents should ship concrete assets, not just commentary",
+    "Memory and documentation are part of the operating system"
+  ],
+  "agents": [
+    {
+      "id": "openclaw-main",
+      "name": "Mwakulomba",
+      "role": "Chief Operator",
+      "status": "active",
+      "focus": "Direct execution, planning, memory maintenance, and project steering",
+      "desk": "Central desk"
+    },
+    {
+      "id": "strategy-council",
+      "name": "R&D Council",
+      "role": "Strategy Unit",
+      "status": "active",
+      "focus": "Pressure-test ideas, generate memos, and shape next bets",
+      "desk": "War room"
+    },
+    {
+      "id": "builder-01",
+      "name": "Builder Agent",
+      "role": "Product Builder",
+      "status": "available",
+      "focus": "Implement product features and infrastructure",
+      "desk": "Desk A"
+    },
+    {
+      "id": "memory-keeper",
+      "name": "Memory Keeper",
+      "role": "Archivist",
+      "status": "idle",
+      "focus": "Organize notes, daily logs, and durable memory",
+      "desk": "Archives"
+    }
+  ]
+}
